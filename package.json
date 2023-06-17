@@ -1,0 +1,23 @@
+{
+  "name": "shazamlinks",
+  "version": "1.0.0",
+  "description": "userscript on shazam.com to add youtube, spotify, deezer search",
+  "main": "shazamlinks.user.ts",
+  "scripts": {
+    "build": "tsc && swc shazamlinks.user.ts --out-file shazamlinks.user.js",
+    "dev": "chokidar 'shazamlinks.user.ts' -c 'pnpm run build'",
+    "watch": "swc shazamlinks.user.ts --out-file shazamlinks.user.js --watch",
+    "prettier": "prettier shazamlinks.user.ts --write",
+    "lint": "eslint shazamlinks.user.ts --fix"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.62",
+    "@typescript-eslint/eslint-plugin": "^5.59.11",
+    "@typescript-eslint/parser": "^5.59.11",
+    "chokidar": "^3.5.3",
+    "chokidar-cli": "^3.0.0",
+    "eslint": "^8.43.0",
+    "prettier": "^2.8.8",
+    "typescript": "^5.0.2"
+  }
+}

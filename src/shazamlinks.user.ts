@@ -14,16 +14,13 @@ function run() {
   const title = document.querySelector('h1.title') as HTMLHeadingElement;
   const artist = document.querySelector('h2.artist') as HTMLHeadingElement;
 
-  function createElement(text: string, url: string) {
+  function createElement(text: string, url: string, color: string) {
     const element = document.createElement('div');
     const classNames = ['action', 'flex-reset', 'btn', 'share', 'popup-btn', 'popup-inline'];
 
     element.classList.add(...classNames);
     element.innerText = text;
-
-    if (text === 'Youtube') element.style.backgroundColor = '#FF0000';
-    else if (text === 'Spotify') element.style.backgroundColor = '#1DB954';
-    else if (text === 'Deezer') element.style.backgroundColor = '#00C7F2';
+    element.style.backgroundColor = color;
 
     element.addEventListener('click', () => window.open(url, '_blank'));
 
@@ -32,15 +29,23 @@ function run() {
 
   const youtube = createElement(
     'Youtube',
-    `https://www.youtube.com/results?search_query=${title?.innerText}+${artist?.innerText}`
+    `https://www.youtube.com/results?search_query=${title?.innerText}+${artist?.innerText}`,
+    '#FF0000'
   );
   const spotify = createElement(
     'Spotify',
-    `https://open.spotify.com/search/${title?.innerText} ${artist?.innerText}`
+    `https://open.spotify.com/search/${title?.innerText} ${artist?.innerText}`,
+    '#1DB954'
   );
   const deezer = createElement(
     'Deezer',
-    `https://www.deezer.com/search/${title?.innerText} ${artist?.innerText}`
+    `https://www.deezer.com/search/${title?.innerText} ${artist?.innerText}`,
+    '#00C7F2'
+  );
+  const soundcloud = createElement(
+    'SoundCloud',
+    `https://soundcloud.com/search?q=${title?.innerText} ${artist?.innerText}`,
+    '#FF5500'
   );
 
   const container = document?.querySelector(
@@ -49,6 +54,7 @@ function run() {
   container?.appendChild(youtube);
   container?.appendChild(spotify);
   container?.appendChild(deezer);
+  container?.appendChild(soundcloud);
 
   clearInterval(interval);
 }

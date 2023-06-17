@@ -3,11 +3,11 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://www.shazam.com/*
 // @grant       none
-// @version     2.1
+// @version     2.2
 // @author      ozaki
 // @description 17/06/2023 01:19:37
 // @homepageURL https://github.com/OzakIOne/shazamlinks/
-// @updateURL   https://github.com/OzakIOne/shazamlinks/blob/master/shazamlinks.user.js
+// @updateURL   https://github.com/OzakIOne/shazamlinks/blob/master/src/shazamlinks.user.js
 // ==/UserScript==
 
 function run() {

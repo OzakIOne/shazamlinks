@@ -30,27 +30,26 @@ function run() {
   const youtube = createElement(
     'Youtube',
     `https://www.youtube.com/results?search_query=${title?.innerText}+${artist?.innerText}`,
-    '#FF0000'
+    '#FF0000',
   );
   const spotify = createElement(
     'Spotify',
     `https://open.spotify.com/search/${title?.innerText} ${artist?.innerText}`,
-    '#1DB954'
+    '#1DB954',
   );
   const deezer = createElement(
     'Deezer',
     `https://www.deezer.com/search/${title?.innerText} ${artist?.innerText}`,
-    '#00C7F2'
+    '#00C7F2',
   );
   const soundcloud = createElement(
     'SoundCloud',
     `https://soundcloud.com/search?q=${title?.innerText} ${artist?.innerText}`,
-    '#FF5500'
+    '#FF5500',
   );
 
-  const container = document?.querySelector(
-    '.flex-reset.btn.share.popup-btn.popup-inline'
-  )?.parentNode;
+  const container = document?.querySelector('.flex-reset.btn.share.popup-btn.popup-inline')
+    ?.parentNode;
   container?.appendChild(youtube);
   container?.appendChild(spotify);
   container?.appendChild(deezer);
